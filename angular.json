@@ -13,12 +13,16 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "exceljs",
+              "file-saver"
+           ],
             "outputPath": "dist/angular-exceljs-example",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -41,7 +45,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -120,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-exceljs-example"
+    }
+  },
+  "defaultProject": "angular-exceljs-example",
+  "cli": {
+    "analytics": false
+  }
 }
